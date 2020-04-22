@@ -56,9 +56,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">
-                                        Link Notifikasi
-                                    </a>
+                                    @foreach (auth()->user()->notifications as $notification)
+                                        <a class="dropdown-item" href="#">
+                                            {{ $notification->data['data'] }}
+                                        </a>
+                                    @endforeach
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
