@@ -29,7 +29,7 @@ class HomeController extends Controller
 
     public function addNotifications()
     {
-        User::find(1)->notify(new TaskNotification);
+        User::find(auth()->user()->id)->notify(new TaskNotification);
 
         return redirect()->back();
     }
