@@ -28,4 +28,11 @@ class HomeController extends Controller
 
         return view('home');
     }
+
+    public function markRead()
+    {
+        auth()->user()->unreadNotifications->markAsRead();
+
+        return redirect()->back();
+    }
 }

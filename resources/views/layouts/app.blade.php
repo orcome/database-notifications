@@ -53,13 +53,18 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <i class="fa fa-bell">
-                                        <span class="badge badge-pill badge-secondary">{{ auth()->user()->notifications->count() }}</span>
+                                        @if (auth()->user()->unreadNotifications->count())
+                                            <span class="badge badge-pill badge-secondary">
+                                                {{ auth()->user()->unreadNotifications->count() }}
+                                            </span>
+                                        @endif
                                     </i>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background-color: lightgray">
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('markRead') }}" style="color: green">Tandai Semua Telah Dibaca</a>
                                     @foreach (auth()->user()->unreadNotifications as $notification)
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="#" style="background-color: lightgray">
                                             {{ $notification->data['data'] }}
                                         </a>
                                     @endforeach
