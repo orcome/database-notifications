@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">
+                    <a href="{{ route('addNotifications') }}"  class="btn btn-success float-right">Tambah Notifikasi</a>
+                    Dashboard
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))

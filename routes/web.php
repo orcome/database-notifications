@@ -18,4 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('addNotifications', 'HomeController@addNotifications')->name('addNotifications');
 Route::get('maskAsRead', 'HomeController@markRead')->name('markRead');

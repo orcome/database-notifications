@@ -24,9 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('home');
+    }
+
+    public function addNotifications()
+    {
         User::find(1)->notify(new TaskNotification);
 
-        return view('home');
+        return redirect()->back();
     }
 
     public function markRead()
