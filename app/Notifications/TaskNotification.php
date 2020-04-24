@@ -14,7 +14,7 @@ class TaskNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data' => 'Ini contoh notifikasi pertama saya',
+            'isi_notif' => 'Ini contoh notifikasi pertama saya',
         ];
     }
 }

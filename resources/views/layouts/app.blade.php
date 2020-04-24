@@ -65,12 +65,12 @@
                                     <a class="dropdown-item" href="{{ route('markRead') }}" style="color: green">Tandai Semua Telah Dibaca</a>
                                     @foreach (auth()->user()->unreadNotifications as $notification)
                                         <a class="dropdown-item" href="#" style="background-color: lightgray">
-                                            {{ $notification->data['data'] }}
+                                            {{ $notification->data['isi_notif'] }}
                                         </a>
                                     @endforeach
                                     @foreach (auth()->user()->readNotifications as $notification)
                                         <a class="dropdown-item" href="#">
-                                            {{ $notification->data['data'] }}
+                                            {{ $notification->data['isi_notif'] }}
                                         </a>
                                     @endforeach
                                 </div>
